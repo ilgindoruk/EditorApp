@@ -245,6 +245,7 @@
             tsac.Size = new Size(36, 51);
             tsac.Text = "Aç";
             tsac.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsac.Click += tsac_Click;
             // 
             // tskaydet
             // 
@@ -381,6 +382,8 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
+            Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);

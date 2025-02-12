@@ -4,7 +4,7 @@ namespace EditorApp
 {
     public partial class Form1 : Form
     {
-        string dosyaAdi;//editördeki dosyanýn adý
+        string dosyaAdi;
 
         public Form1()
         {
@@ -21,6 +21,31 @@ namespace EditorApp
         {
 
         }
+        void Kaydet()
+        {
+            
+            
+            if (!string.IsNullOrEmpty(dosyaAdi))
+            {
+                File.WriteAllText(dosyaAdi, txtbelge.Text);
+                return;
+            }
+
+            saveFileDialog1.Filter = "Metin Dosyalarý|*.txt|Tüm Dosyalar|*.*";
+            saveFileDialog1.DefaultExt = "*.txt";
+            DialogResult cevap = saveFileDialog1.ShowDialog();
+
+            if (cevap == DialogResult.OK)
+            {
+                string secilenDosya = saveFileDialog1.FileName;
+
+                
+                File.WriteAllText(secilenDosya, txtbelge.Text);
+                dosyaAdi = secilenDosya;
+                Text = $"[{dosyaAdi}]";
+            }
+        }
+
         void YeniBelge()
         {
             txtbelge.Text = "";
@@ -56,17 +81,56 @@ namespace EditorApp
             saveFileDialog1.DefaultExt = "*.txt";
             DialogResult cevap = saveFileDialog1.ShowDialog();
 
-            if (cevap == DialogResult.OK)//kullanıcı tamam dediyse
+            if (cevap == DialogResult.OK)
 
                 if (cevap == DialogResult.OK)
-            {
+                {
                     string secilenDosya = saveFileDialog1.FileName;
 
-                    //File sınıfı dosya işlemleri için kullanılır
+                    
                     File.WriteAllText(secilenDosya, txtbelge.Text);
                     dosyaAdi = secilenDosya;
                     Text = $"[{dosyaAdi}]";
                 }
+        }
+
+        private void tsac_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new();
+            dialog.Filter = "Metin Dosyaları|*.txt|Tüm Dosyalar|*.*";
+            dialog.DefaultExt = "*.txt";
+
+            DialogResult cevap = dialog.ShowDialog();
+            if (cevap == DialogResult.OK)
+            {
+                string secilenDosya = dialog.FileName;
+                string icerik = File.ReadAllText(secilenDosya);
+                txtbelge.Text = icerik;
+                dosyaAdi = secilenDosya;
+                Text = $"[{dosyaAdi}]";
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+ 
+            var cevap = MessageBox.Show("Kayıt edilmemiş değişiklikleri kayıt etmek ister misiniz?",
+                "Dikkat", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (cevap == DialogResult.Yes)
+            {
+                Kaydet();
+            }
+            else if (cevap == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            
         }
     }
 
