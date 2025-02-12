@@ -66,7 +66,9 @@
             toolStripSeparator3 = new ToolStripSeparator();
             tshakkında = new ToolStripButton();
             statusStrip1 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            tssl = new ToolStripStatusLabel();
+            txtbelge = new TextBox();
+            saveFileDialog1 = new SaveFileDialog();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -92,36 +94,37 @@
             // dtsyeni
             // 
             dtsyeni.Name = "dtsyeni";
-            dtsyeni.Size = new Size(180, 22);
+            dtsyeni.Size = new Size(141, 22);
             dtsyeni.Text = "Yeni";
+            dtsyeni.Click += dtsyeni_Click;
             // 
             // dtsac
             // 
             dtsac.Name = "dtsac";
-            dtsac.Size = new Size(180, 22);
+            dtsac.Size = new Size(141, 22);
             dtsac.Text = "Aç";
             // 
             // dtskaydet
             // 
             dtskaydet.Name = "dtskaydet";
-            dtskaydet.Size = new Size(180, 22);
+            dtskaydet.Size = new Size(141, 22);
             dtskaydet.Text = "Kaydet";
             // 
             // dtsfarklıkaydet
             // 
             dtsfarklıkaydet.Name = "dtsfarklıkaydet";
-            dtsfarklıkaydet.Size = new Size(180, 22);
+            dtsfarklıkaydet.Size = new Size(141, 22);
             dtsfarklıkaydet.Text = "Farklı Kaydet";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(177, 6);
+            toolStripMenuItem2.Size = new Size(138, 6);
             // 
             // dtscıkıs
             // 
             dtscıkıs.Name = "dtscıkıs";
-            dtscıkıs.Size = new Size(180, 22);
+            dtscıkıs.Size = new Size(141, 22);
             dtscıkıs.Text = "Çıkış";
             // 
             // düzenToolStripMenuItem
@@ -135,30 +138,30 @@
             // dtskes
             // 
             dtskes.Name = "dtskes";
-            dtskes.Size = new Size(180, 22);
+            dtskes.Size = new Size(116, 22);
             dtskes.Text = "Kes";
             // 
             // dtskopyala
             // 
             dtskopyala.Name = "dtskopyala";
-            dtskopyala.Size = new Size(180, 22);
+            dtskopyala.Size = new Size(116, 22);
             dtskopyala.Text = "Kopyala";
             // 
             // dtsyapıstır
             // 
             dtsyapıstır.Name = "dtsyapıstır";
-            dtsyapıstır.Size = new Size(180, 22);
+            dtsyapıstır.Size = new Size(116, 22);
             dtsyapıstır.Text = "Yapıştır";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(177, 6);
+            toolStripMenuItem1.Size = new Size(113, 6);
             // 
             // dtsbul
             // 
             dtsbul.Name = "dtsbul";
-            dtsbul.Size = new Size(180, 22);
+            dtsbul.Size = new Size(116, 22);
             dtsbul.Text = "Bul";
             // 
             // görünümToolStripMenuItem
@@ -173,31 +176,31 @@
             // 
             dtstema.DropDownItems.AddRange(new ToolStripItem[] { dtsacık, dtskoyu });
             dtstema.Name = "dtstema";
-            dtstema.Size = new Size(180, 22);
+            dtstema.Size = new Size(127, 22);
             dtstema.Text = "Temalar";
             // 
             // dtsacık
             // 
             dtsacık.Name = "dtsacık";
-            dtsacık.Size = new Size(180, 22);
+            dtsacık.Size = new Size(101, 22);
             dtsacık.Text = "Açık";
             // 
             // dtskoyu
             // 
             dtskoyu.Name = "dtskoyu";
-            dtskoyu.Size = new Size(180, 22);
+            dtskoyu.Size = new Size(101, 22);
             dtskoyu.Text = "Koyu";
             // 
             // dtsyazıtıpı
             // 
             dtsyazıtıpı.Name = "dtsyazıtıpı";
-            dtsyazıtıpı.Size = new Size(180, 22);
+            dtsyazıtıpı.Size = new Size(127, 22);
             dtsyazıtıpı.Text = "Yazı Tipi";
             // 
             // dtsyazırengı
             // 
             dtsyazırengı.Name = "dtsyazırengı";
-            dtsyazırengı.Size = new Size(180, 22);
+            dtsyazırengı.Size = new Size(127, 22);
             dtsyazırengı.Text = "Yazı Rengi";
             // 
             // dtsyardım
@@ -210,7 +213,7 @@
             // dtshakkında
             // 
             dtshakkında.Name = "dtshakkında";
-            dtshakkında.Size = new Size(180, 22);
+            dtshakkında.Size = new Size(124, 22);
             dtshakkında.Text = "Hakkında";
             // 
             // toolStrip1
@@ -232,6 +235,7 @@
             tsyenı.Size = new Size(36, 51);
             tsyenı.Text = "Yeni";
             tsyenı.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsyenı.Click += tsyenı_Click;
             // 
             // tsac
             // 
@@ -250,6 +254,7 @@
             tskaydet.Size = new Size(47, 51);
             tskaydet.Text = "Kaydet";
             tskaydet.TextImageRelation = TextImageRelation.ImageAboveText;
+            tskaydet.Click += tskaydet_Click;
             // 
             // tsfarklıkaydet
             // 
@@ -341,24 +346,35 @@
             // statusStrip1
             // 
             statusStrip1.BackColor = Color.Thistle;
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { tssl });
             statusStrip1.Location = new Point(0, 522);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(800, 22);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // tssl
             // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 17);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            tssl.Name = "tssl";
+            tssl.Size = new Size(32, 17);
+            tssl.Text = "hazır";
+            // 
+            // txtbelge
+            // 
+            txtbelge.Dock = DockStyle.Fill;
+            txtbelge.Location = new Point(0, 78);
+            txtbelge.Multiline = true;
+            txtbelge.Name = "txtbelge";
+            txtbelge.Size = new Size(800, 444);
+            txtbelge.TabIndex = 3;
+            txtbelge.TextChanged += txtbelge_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 544);
+            Controls.Add(txtbelge);
             Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
@@ -415,6 +431,8 @@
         private ToolStripButton tsyenı;
         private ToolStripButton tshakkında;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel tssl;
+        private TextBox txtbelge;
+        private SaveFileDialog saveFileDialog1;
     }
 }
