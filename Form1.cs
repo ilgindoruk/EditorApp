@@ -15,6 +15,8 @@ namespace EditorApp
         private void düzenToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+
+
         }
 
         private void görünümToolStripMenuItem_Click(object sender, EventArgs e)
