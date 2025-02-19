@@ -25,8 +25,8 @@ namespace EditorApp
         }
         void Kaydet()
         {
-            
-            
+
+
             if (!string.IsNullOrEmpty(dosyaAdi))
             {
                 File.WriteAllText(dosyaAdi, txtbelge.Text);
@@ -41,7 +41,7 @@ namespace EditorApp
             {
                 string secilenDosya = saveFileDialog1.FileName;
 
-                
+
                 File.WriteAllText(secilenDosya, txtbelge.Text);
                 dosyaAdi = secilenDosya;
                 Text = $"[{dosyaAdi}]";
@@ -89,7 +89,7 @@ namespace EditorApp
                 {
                     string secilenDosya = saveFileDialog1.FileName;
 
-                    
+
                     File.WriteAllText(secilenDosya, txtbelge.Text);
                     dosyaAdi = secilenDosya;
                     Text = $"[{dosyaAdi}]";
@@ -120,7 +120,7 @@ namespace EditorApp
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
- 
+
             var cevap = MessageBox.Show("Kayıt edilmemiş değişiklikleri kayıt etmek ister misiniz?",
                 "Dikkat", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
@@ -132,7 +132,22 @@ namespace EditorApp
             {
                 e.Cancel = true;
             }
-            
+
+        }
+
+        private void dtskes_Click(object sender, EventArgs e)
+        {
+            txtbelge.Cut();
+        }
+
+        private void dtskopyala_Click(object sender, EventArgs e)
+        {
+            txtbelge.Copy();
+        }
+
+        private void dtsyapıstır_Click(object sender, EventArgs e)
+        {
+            txtbelge.Paste();
         }
     }
 

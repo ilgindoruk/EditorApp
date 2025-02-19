@@ -138,30 +138,33 @@
             // dtskes
             // 
             dtskes.Name = "dtskes";
-            dtskes.Size = new Size(116, 22);
+            dtskes.Size = new Size(180, 22);
             dtskes.Text = "Kes";
+            dtskes.Click += dtskes_Click;
             // 
             // dtskopyala
             // 
             dtskopyala.Name = "dtskopyala";
-            dtskopyala.Size = new Size(116, 22);
+            dtskopyala.Size = new Size(180, 22);
             dtskopyala.Text = "Kopyala";
+            dtskopyala.Click += dtskopyala_Click;
             // 
             // dtsyapıstır
             // 
             dtsyapıstır.Name = "dtsyapıstır";
-            dtsyapıstır.Size = new Size(116, 22);
+            dtsyapıstır.Size = new Size(180, 22);
             dtsyapıstır.Text = "Yapıştır";
+            dtsyapıstır.Click += dtsyapıstır_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(113, 6);
+            toolStripMenuItem1.Size = new Size(177, 6);
             // 
             // dtsbul
             // 
             dtsbul.Name = "dtsbul";
-            dtsbul.Size = new Size(116, 22);
+            dtsbul.Size = new Size(180, 22);
             dtsbul.Text = "Bul";
             // 
             // görünümToolStripMenuItem
@@ -279,6 +282,7 @@
             tskes.Size = new Size(36, 51);
             tskes.Text = "Kes";
             tskes.TextImageRelation = TextImageRelation.ImageAboveText;
+            tskes.Click += dtskes_Click;
             // 
             // tskopyala
             // 
@@ -288,6 +292,7 @@
             tskopyala.Size = new Size(53, 51);
             tskopyala.Text = "Kopyala";
             tskopyala.TextImageRelation = TextImageRelation.ImageAboveText;
+            tskopyala.Click += dtskopyala_Click;
             // 
             // tsyapıstır
             // 
@@ -297,6 +302,7 @@
             tsyapıstır.Size = new Size(49, 51);
             tsyapıstır.Text = "Yapıştır";
             tsyapıstır.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsyapıstır.Click += dtsyapıstır_Click;
             // 
             // toolStripSeparator2
             // 
@@ -308,7 +314,7 @@
             tstema.Image = Properties.Resources.icons8_theme_32;
             tstema.ImageTransparentColor = Color.Magenta;
             tstema.Name = "tstema";
-            tstema.Size = new Size(39, 51);
+            tstema.Size = new Size(40, 51);
             tstema.Text = "Tema";
             tstema.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
