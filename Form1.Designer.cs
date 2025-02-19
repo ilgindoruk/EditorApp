@@ -69,6 +69,7 @@
             tssl = new ToolStripStatusLabel();
             txtbelge = new TextBox();
             saveFileDialog1 = new SaveFileDialog();
+            tsbul = new ToolStripButton();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -94,37 +95,37 @@
             // dtsyeni
             // 
             dtsyeni.Name = "dtsyeni";
-            dtsyeni.Size = new Size(141, 22);
+            dtsyeni.Size = new Size(180, 22);
             dtsyeni.Text = "Yeni";
             dtsyeni.Click += dtsyeni_Click;
             // 
             // dtsac
             // 
             dtsac.Name = "dtsac";
-            dtsac.Size = new Size(141, 22);
+            dtsac.Size = new Size(180, 22);
             dtsac.Text = "Aç";
             // 
             // dtskaydet
             // 
             dtskaydet.Name = "dtskaydet";
-            dtskaydet.Size = new Size(141, 22);
+            dtskaydet.Size = new Size(180, 22);
             dtskaydet.Text = "Kaydet";
             // 
             // dtsfarklıkaydet
             // 
             dtsfarklıkaydet.Name = "dtsfarklıkaydet";
-            dtsfarklıkaydet.Size = new Size(141, 22);
+            dtsfarklıkaydet.Size = new Size(180, 22);
             dtsfarklıkaydet.Text = "Farklı Kaydet";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(138, 6);
+            toolStripMenuItem2.Size = new Size(177, 6);
             // 
             // dtscıkıs
             // 
             dtscıkıs.Name = "dtscıkıs";
-            dtscıkıs.Size = new Size(141, 22);
+            dtscıkıs.Size = new Size(180, 22);
             dtscıkıs.Text = "Çıkış";
             // 
             // düzenToolStripMenuItem
@@ -179,7 +180,7 @@
             // 
             dtstema.DropDownItems.AddRange(new ToolStripItem[] { dtsacık, dtskoyu });
             dtstema.Name = "dtstema";
-            dtstema.Size = new Size(127, 22);
+            dtstema.Size = new Size(180, 22);
             dtstema.Text = "Temalar";
             // 
             // dtsacık
@@ -197,13 +198,13 @@
             // dtsyazıtıpı
             // 
             dtsyazıtıpı.Name = "dtsyazıtıpı";
-            dtsyazıtıpı.Size = new Size(127, 22);
+            dtsyazıtıpı.Size = new Size(180, 22);
             dtsyazıtıpı.Text = "Yazı Tipi";
             // 
             // dtsyazırengı
             // 
             dtsyazırengı.Name = "dtsyazırengı";
-            dtsyazırengı.Size = new Size(127, 22);
+            dtsyazırengı.Size = new Size(180, 22);
             dtsyazırengı.Text = "Yazı Rengi";
             // 
             // dtsyardım
@@ -216,14 +217,14 @@
             // dtshakkında
             // 
             dtshakkında.Name = "dtshakkında";
-            dtshakkında.Size = new Size(124, 22);
+            dtshakkında.Size = new Size(180, 22);
             dtshakkında.Text = "Hakkında";
             // 
             // toolStrip1
             // 
             toolStrip1.BackColor = Color.Thistle;
             toolStrip1.ImageScalingSize = new Size(32, 32);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsyenı, tsac, tskaydet, tsfarklıkaydet, toolStripSeparator1, tskes, tskopyala, tsyapıstır, toolStripSeparator2, tstema, tsyazıtıpı, tsyazırengı, toolStripSeparator3, tshakkında });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsyenı, tsac, tskaydet, tsfarklıkaydet, toolStripSeparator1, tskes, tskopyala, tsyapıstır, toolStripSeparator2, tstema, tsyazıtıpı, tsyazırengı, toolStripSeparator3, tsbul, tshakkında });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
@@ -376,6 +377,15 @@
             txtbelge.TabIndex = 3;
             txtbelge.TextChanged += txtbelge_TextChanged;
             // 
+            // tsbul
+            // 
+            tsbul.Image = Properties.Resources.research__1_;
+            tsbul.ImageTransparentColor = Color.Magenta;
+            tsbul.Name = "tsbul";
+            tsbul.Size = new Size(36, 51);
+            tsbul.Text = "Bul";
+            tsbul.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -443,5 +453,6 @@
         private ToolStripStatusLabel tssl;
         private TextBox txtbelge;
         private SaveFileDialog saveFileDialog1;
+        private ToolStripButton tsbul;
     }
 }
